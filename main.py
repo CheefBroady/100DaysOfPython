@@ -1,9 +1,19 @@
-print("Welcome to the tip calculator!")
-bill = float(input("What was the total bill? "))
-tip = int(input("How much tip would you like to give? 10, 12, or 15? "))
-people = int(input("How many people to split the bill? "))
-bill_with_tip = bill * (1 +  tip / 100)
-bill_per_person = bill_with_tip / people
-final_bill_person = round(bill_per_person, 2)
-final_bill_person = "{:.2f}".format(bill_per_person)
-print(f"Each person should pay $ {final_bill_person}")
+height = int(input("What is your height? "))
+bill = 0
+
+if height > 120:
+  age = int(input("What is your age? "))
+  if age > 44 and age < 56:
+    print("You do not have to pay.")
+  elif age < 12:
+    bill += 5
+  elif age < 19:
+    bill += 7
+  else:
+    bill += 12
+    photo = input("Do you want to have a photo? ")
+    if photo in("Y", "y"):
+      bill += 3
+    print(f"Your total bill is {bill}.")
+else:
+  print("You have to grow!")
